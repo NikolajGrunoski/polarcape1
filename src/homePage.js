@@ -13,25 +13,36 @@ class homePage extends React.Component {
     componentDidMount() {
 
         fetch('https://api.magicthegathering.io/v1/cards?random=true&pageSize=100&language=English')
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    items: json,
-                    isLoaded: true,
-                })
+            .then(res => {console.log(res.json().cards)
+                // this.setState({
+                //     items:res.json().cards,
+                //     isLoaded:true,
+                // })
             }).catch((err) => {
-                console.log(err);
-            });
+                console.log(err)
+            })
+
+            // .then(json => {
+            //     console.log(json)
+            //     this.setState({
+            //         items: json,
+            //         isLoaded: true,
+            //     })
+            // .catch((err) => {
+            //     console.log(err);
+            // });
 
 
     }
 
+    
     render() {
         const { isLoaded, items } = this.state;
 
         if (!isLoaded)
             return <div>Loading...</div>;
 
+      
         return (
             <div className="App">
                 <ul>
@@ -42,7 +53,9 @@ class homePage extends React.Component {
                     ))}
                 </ul>
             </div>
-           
+
+       
+
 
         );
     }

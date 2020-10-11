@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import './App.css';
-import { Router, Route, Switch } from "react-router";
-import homePage from './homePage';
 import { Link } from 'react-router-dom';
 
 class App extends React.Component {
@@ -49,7 +47,7 @@ class App extends React.Component {
     )
   }
 }
-{/* <script src="https://unpkg.com/react-router/umd/react-router.min.js"></script> */ }
+
 
 export default App;
 // ReactDOM.render(<App />, document.getElementById("root"))
